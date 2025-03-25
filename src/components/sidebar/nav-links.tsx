@@ -6,22 +6,24 @@ import { Collapsible, CollapsibleTrigger } from "../ui/collapsible";
 import { LucideIcon } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import React from "react";
 
 
-export type NavMainProps = {
+export type NavLinkProps = {
     items: {
         title: string
         url: string
-        icon: LucideIcon
+        icon: LucideIcon,
+        target?: React.HTMLAttributeAnchorTarget
     }[]
 };
 
-export function NavMain({ items } : NavMainProps) {
+export function NavLink({ items } : NavLinkProps) {
     const pathname = usePathname();
 
     return (
         <SidebarGroup>
-        <SidebarGroupLabel>Navegação</SidebarGroupLabel>
+        <SidebarGroupLabel>Links</SidebarGroupLabel>
         <SidebarMenu>
           {items.map((item) => (
             <Collapsible
@@ -31,7 +33,7 @@ export function NavMain({ items } : NavMainProps) {
             >
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
-                  <Link href={item.url}>
+                  <Link href={item.url} target={item.target}>
                     <SidebarMenuButton 
                           tooltip={item.title}
                           isActive={pathname === item.url ? true : false}
