@@ -8,8 +8,11 @@ export default function Dashboard() {
 
     return (
         <section>
-            <section>
+            <section className="mb-4">
                 <DashboardSection/>
+            </section>
+            <section>
+        
             </section>
         </section>
     )
