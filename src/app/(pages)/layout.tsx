@@ -12,7 +12,15 @@ const settings = {
     fullName: "Victor Siqueira",
     username: "victorsz08",
     imageUrl: "https://github.com/victorsz08.png"
-}
+};
+
+const notifications = [
+    {
+        title: "Reagendar Contrato!",
+        description: "Você tem um novo contrato para reagendar!",
+        notificationId: "1"
+    }
+]
 
 
 export default function Layout({ children } : { children: React.ReactNode }) {
@@ -28,7 +36,7 @@ export default function Layout({ children } : { children: React.ReactNode }) {
                         <Bread/>
                     </div>
                     <div className="flex items-center flex-row gap-2">
-                        <Notifications/>
+                        <Notifications notifications={notifications}/>
                         <ProfileMenu settings={settings}/>
                     </div>
                 </SidebarHeader>
