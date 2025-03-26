@@ -1,6 +1,6 @@
 "use client";
 
-import { ClipboardList, House, Notebook } from "lucide-react";
+import { ClipboardList, Globe, House, Notebook, ShieldCheck, UserRoundCheck, WalletMinimal } from "lucide-react";
 import { Sidebar, SidebarHeader } from "../ui/sidebar";
 import { SidebarContent } from "../ui/sidebar";
 import { NavMain, NavMainProps } from "./nav-main";
@@ -32,27 +32,27 @@ const data: NavMainProps = {
 const dataLinks: NavLinkProps = {
   items: [
     {
-        title: "Dashboard",
+        title: "Situação CPF",
         url: "https://servicos.receita.fazenda.gov.br/Servicos/CPF/ConsultaSituacao/ConsultaPublica.asp",
-        icon: House,
+        icon: UserRoundCheck,
         target: "_blank"
     },
     {
-        title: "Contratos",
+        title: "Situação CNPJ",
         url: "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/cnpjreva_Solicitacao.asp",
-        icon: ClipboardList,
+        icon: ShieldCheck,
         target: "_blank"
     },
     {
-        title: "Notas",
+        title: "Negocia Fácil Claro",
         url: "https://claro.negociafacil.com.br/",
-        icon: Notebook,
+        icon: WalletMinimal,
         target: "_blank"
     },
     {
-      title: "Notas",
+      title: "Site Oficial da Claro",
       url: "https://www.claro.com.br/",
-      icon: Notebook,
+      icon: Globe,
       target: "_blank"
   },
 ]
@@ -62,7 +62,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     return (
         <Sidebar collapsible="icon" {...props}>
-          <SidebarHeader className="flex items-center flex-row py-3">
+          <SidebarHeader className="flex items-center flex-row py-4">
             <Image src="icon.svg" width={26} height={26} alt="Notetools Logo"/>
             <p className="text-lg font-semibold text-slate-600 group-data-[collapsible=icon]:hidden">
                 Notetools
