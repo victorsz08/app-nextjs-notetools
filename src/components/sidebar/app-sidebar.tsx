@@ -64,7 +64,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <Sidebar collapsible="icon" {...props}>
           <SidebarHeader className="flex items-center flex-row py-4">
             <Image src="icon.svg" width={26} height={26} alt="Notetools Logo"/>
-            <p className="text-lg font-semibold text-slate-600 group-data-[collapsible=icon]:hidden">
+            <p className="text-lg font-semibold tracking-tight text-slate-600 group-data-[collapsible=icon]:hidden">
                 Notetools
             </p>
           </SidebarHeader>

@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbList, BreadcrumbSeparator } from "../ui/breadcrumb";
-import { House } from "lucide-react";
+import React from "react";
 
 
 export function Bread() {
@@ -14,12 +14,12 @@ export function Bread() {
             <BreadcrumbList className="text-[14px] font-normal">
             <BreadcrumbSeparator/>
                 {segments.map((segment, index) => (
-                    <>
+                    <React.Fragment key={index}>
                         <BreadcrumbItem className={`${segment === segments[index] ? "text-slate-600" : "text-slate-400"}`} key={index}>
                             {segment.charAt(0).toUpperCase() + segment.slice(1)}
                         </BreadcrumbItem>
                         {index < segments.length - 1 && <BreadcrumbSeparator/>}
-                    </>
+                    </React.Fragment>
                 ))}
             </BreadcrumbList>
         </Breadcrumb>

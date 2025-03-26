@@ -28,8 +28,8 @@ export default function Layout({ children } : { children: React.ReactNode }) {
     return (
         <SidebarProvider>
             <AppSidebar variant="sidebar"/>
-            <SidebarInset>
-                <SidebarHeader className="bg-white py-4 px-3 flex flex-row items-center justify-between gap-2">
+            <main className="w-full">
+                <header className="bg-white py-4 px-3 flex flex-row items-center justify-between gap-2">
                     <div className="flex items-center flex-row gap-2">
                         <TriggerSidebar/>
                         <Separator orientation="vertical" className="h-full"/>
@@ -39,12 +39,10 @@ export default function Layout({ children } : { children: React.ReactNode }) {
                         <Notifications notifications={notifications}/>
                         <ProfileMenu settings={settings}/>
                     </div>
-                </SidebarHeader>
+                </header>
                 <Separator/>
-                <main className="w-full">
                     {children}
                 </main>
-            </SidebarInset>
         </SidebarProvider>
     )
 }

@@ -12,10 +12,8 @@ type CardNotificationsProps = {
 
 export function CardNotifications(item: CardNotificationsProps) {
 
-    async function onClearNotification() {
-        const res = await fetch(`/api/notifications/${item.notificationId}`, {
-            method: "DELETE"
-        });
+   function onClearNotification() {
+        return
     };
 
     return (

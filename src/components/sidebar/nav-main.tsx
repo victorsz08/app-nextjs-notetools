@@ -36,7 +36,7 @@ export function NavMain({ items } : NavMainProps) {
                           tooltip={item.title}
                           isActive={pathname === item.url ? true : false}
                           className="data-[active=true]:bg-purple-700 py-5 data-[active=true]:text-white
-                          text-slate-500 cursor-pointer"
+                          text-slate-500 cursor-pointer tracking-tight"
                       >
                           {item.icon && <item.icon />}
                           <span>{item.title}</span>
