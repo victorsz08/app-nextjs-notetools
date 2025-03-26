@@ -14,10 +14,10 @@ export type CardOverviewProps = {
 export function CardOverview(props: CardOverviewProps) {
 
     return (
-        <Card className="w-full py-6">
+        <Card className="w-full py-6 shadow-none">
             <CardContent>
                 <span className="flex items-center text-slate-500 justify-between mb-3">
-                    <p className="text-sm text-slate-600">{props.title}</p>
+                    <p className="text-xs font-medium text-slate-700">{props.title}</p>
                     <props.icon size={16}/>
                 </span>
                 <p className="text-2xl font-semibold text-slate-700">

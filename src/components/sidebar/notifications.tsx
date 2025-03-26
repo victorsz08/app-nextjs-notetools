@@ -1,6 +1,6 @@
 "use client";
 
-import { Bell } from "lucide-react";
+import { Bell, Inbox } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu";
 import { CardNotifications } from "../notifications/card-notifications";
 
@@ -17,8 +17,14 @@ export function Notifications({ notifications } : NotificationsProps) {
 
     return (
         <DropdownMenu>
-            <DropdownMenuTrigger className="p-2 rounded-full text-slate-600 hover:bg-slate-100 cursor-pointer">
-                <Bell/>
+            <DropdownMenuTrigger className="p-2 rounded-full relative text-slate-600 hover:bg-slate-100 cursor-pointer">
+                <Inbox className=""/>
+                    {notifications.length > 0 && 
+                    <span 
+                        className="w-4 h-4 rounded-full bg-red-600 text-white font-bold text-[10px] absolute top-0">
+                        {notifications.length}
+                    </span>
+                    }
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-[420px]" align="end">
                 <DropdownMenuLabel>

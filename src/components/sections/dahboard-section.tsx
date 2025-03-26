@@ -19,8 +19,7 @@ export function DashboardSection() {
 
   return (
     <section className="p-4">
-      <div className="w-full flex justify-between items-center">
-        <h1 className="text-xl font-bold text-slate-600">Overview</h1>
+      <div className="w-full flex justify-end items-center">
         <DateRangeFilters dateRange={dateRage} onDateChange={(value: DateRange) => setDateRange(value)}/>
       </div>
       <CardDashboard data={data}/>

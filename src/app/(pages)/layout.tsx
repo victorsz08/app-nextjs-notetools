@@ -26,7 +26,7 @@ const notifications = [
 export default function Layout({ children } : { children: React.ReactNode }) {
 
     return (
-        <SidebarProvider>
+        <SidebarProvider defaultOpen={false}>
             <AppSidebar variant="sidebar"/>
             <main className="w-full">
                 <header className="bg-white py-4 px-3 flex flex-row items-center justify-between gap-2">
