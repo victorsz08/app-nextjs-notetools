@@ -14,17 +14,19 @@ export type CardOverviewProps = {
 export function CardOverview(props: CardOverviewProps) {
 
     return (
-        <Card className="w-full">
+        <Card className="w-full py-6">
             <CardContent>
-                <span className="flex items-center text-slate-500 justify-between">
-                    <p className="text-sm">{props.title}</p>
-                    <props.icon size={12}/>
+                <span className="flex items-center text-slate-500 justify-between mb-3">
+                    <p className="text-sm text-slate-600">{props.title}</p>
+                    <props.icon size={16}/>
                 </span>
-                <p className="text-2xl font-bold text-slate-700">
+                <p className="text-2xl font-semibold text-slate-700">
                     {
                         props.type === "currency" ?
                         (
-                            props.value.toLocaleString("pt-BR", { currency: "BRL", maximumFractionDigits: 2 })
+                            "R$" + props.value.toLocaleString("pt-BR", 
+                                { currency: "BRL", maximumFractionDigits: 2, minimumFractionDigits: 2 }
+                            )
                         ) 
                         :
                         props.type === "percent" ?

@@ -3,13 +3,18 @@
 import { useState } from "react";
 import { DateRange, DateRangeFilters } from "../date-filters/date-range";
 import { startOfMonth } from "date-fns";
+import { CardDashboard } from "../cards/card-dashboard";
 
-
+const data = {
+  revenue: 4184.80,
+  sales: 52,
+  completionRate: 89
+}
 
 export function DashboardSection() {
   const [dateRage, setDateRange] = useState<DateRange>({
-    from: new Date(),
-    to: startOfMonth(new Date())
+    to: new Date(),
+    from: startOfMonth(new Date())
   });
 
   return (
@@ -18,6 +23,7 @@ export function DashboardSection() {
         <h1 className="text-xl font-bold text-slate-600">Overview</h1>
         <DateRangeFilters dateRange={dateRage} onDateChange={(value: DateRange) => setDateRange(value)}/>
       </div>
+      <CardDashboard data={data}/>
     </section>
   )
 }
